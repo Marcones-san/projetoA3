@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #efebe2;
+}
+
+.navbar { /*muda a cor da nav bar e no final a cor da letra da logo*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a0d5e3;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+.main-content{
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a { /*muda os textos botão da navbar*/
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #007BFF;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    background-color: #a0d5e3;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.main-content{ /*texto dentro do background*/
+    color: black;
+}
+
+/* Estiliza o contêiner do botão */
+.button-agendamento {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 20px;  /* Espaçamento superior */
+}
+
+/* Estiliza o botão dentro do .button-agendamento */
+.button-agendamento button {
+    background-color: #67a9c0; /* Laranja */
+    color: #fffffe; /* Texto branco */
+    border: none; /* Remove borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 10px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    transition: background-color 0.3s ease; /* Animação de hover */
+}
+
+/* Efeito ao passar o mouse */
+.button-agendamento button:hover {
+    background-color: #206b95; /* Azul mais escuro */
+}
+
+/* Estiliza a posição do dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #a0d5e3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%) translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Exibir o menu suspenso ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
