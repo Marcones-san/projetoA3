@@ -9,6 +9,21 @@ body {
     background-color: #efebe2;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre a imagem e o texto */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo-img {
+    width: 40px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    max-width: 50px;
+    width: auto;
+}
+
 .navbar { /*muda a cor da nav bar e no final a cor da letra da logo*/
     display: flex;
     justify-content: space-between;
@@ -103,16 +118,18 @@ html, body {
     background-color: #206b95; /* Azul mais escuro */
 }
 
-/* Estiliza a posição do dropdown */
+/* Container do dropdown */
 .dropdown {
     position: relative;
-    display: inline-block; /*Mantém o alinhamento com os outros itens*/
+    display: inline-block;
 }
 
-.dropdown-menu { /*Estiliza o menu suspenso*/
+/* Ajuste para alinhar corretamente o menu suspenso */
+.dropdown-menu {
     position: absolute;
-    top: 100%; /*Posiciona logo abaixo do item da navbar*/
-    left: 0; /* Mantém alinhado com o texto "Minhas Consultas"*/
+    top: 35px; /* Ajuste fino para alinhar exatamente abaixo do texto */
+    left: 50%; /* Centraliza em relação ao botão */
+    transform: translateX(-50%); /* Mantém o menu alinhado ao centro do botão */
     background-color: #a0d5e3;
     list-style: none;
     padding: 5px 0;
@@ -120,22 +137,23 @@ html, body {
     width: 200px;
     opacity: 0;
     visibility: hidden;
-    border-radius: 10px; /*Borda arredondada*/
+    border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateX(-50%) translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s;
 }
 
+/* Ajuste de alinhamento dos itens internos do dropdown */
 .dropdown-menu li {
     padding: 12px;
-    border-bottom: 1px solid #ffffff;
-    text-align: center;
+    text-align: left; /* Mantém os itens alinhados à esquerda */
 }
 
+/* Remove a borda inferior do último item */
 .dropdown-menu li:last-child {
     border-bottom: none;
 }
 
+/* Links do dropdown */
 .dropdown-menu li a {
     text-decoration: none;
     color: black;
