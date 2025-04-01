@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Redireciona após cadastro
-        window.location.href = "index.html"; // Redireciona para a página principal
+        window.location.href = "index.html";
     });
 });
 
