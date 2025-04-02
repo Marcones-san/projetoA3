@@ -103,7 +103,7 @@ html, body {
 
 /* Estiliza o botão dentro do .button-agendamento */
 .button-agendamento button {
-    background-color: #67a9c0; /* Laranja */
+    background-color: #67a9c0;
     color: #fffffe; /* Texto branco */
     border: none; /* Remove borda */
     padding: 10px 20px; /* Espaçamento interno */
