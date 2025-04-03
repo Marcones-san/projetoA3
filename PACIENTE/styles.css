@@ -34,20 +34,17 @@ body {
     font-weight: bold;
 }
 
-.main-content{
-    flex: 1;
+.main-text {
     display: flex;
-    margin-top: 100px;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center; /* Alinha o texto dentro dos elementos */
+    height: 80vh; /* Faz o conteúdo ocupar 80% da tela */
 }
 
-.main-content1{
-    flex: 1;
-    display: flex;
-}
-
-.main-text{
-    flex: 1;
-    display: flex;
+.main-content, .main-content1 {
+    width: 60%; /* Define uma largura padrão para os textos */
 }
 
 .nav-links {
