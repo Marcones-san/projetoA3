@@ -114,6 +114,22 @@ html, body {
     height: 100vh;
 }
 
+.btn-link {
+    background-color: #67a9c0;
+    color: #fffffe;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #206b95;
+}
+
 /* Estiliza o botão dentro do .button-agendamento */
 .button-agendamento button {
     background-color: #67a9c0;
