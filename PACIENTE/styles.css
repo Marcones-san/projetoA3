@@ -196,3 +196,26 @@ html, body {
     visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
+
+.botoes-postos {
+    display: flex;
+    flex-wrap: wrap; /* permite quebra de linha */
+    justify-content: center; /* centraliza os botões */
+    gap: 10px; /* espaço entre os botões */
+    padding: 20px;
+}
+
+.botoes-postos button {
+    background-color: #67a9c0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.botoes-postos button:hover {
+    background-color: #206b95;
+}
