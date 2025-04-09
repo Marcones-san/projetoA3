@@ -56,3 +56,62 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cepInput = document.getElementById("cep");
+    const telefoneInput = document.getElementById("telefone");
+
+    if (cepInput) {
+        cepInput.addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, "").slice(0, 8);
+            if (value.length > 5) {
+                e.target.value = `${value.slice(0, 5)}-${value.slice(5)}`;
+            } else {
+                e.target.value = value;
+            }
+        });
+    }
+
+    if (telefoneInput) {
+        telefoneInput.addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, "").slice(0, 11);
+            if (value.length <= 10) {
+                // Telefone fixo
+                e.target.value = value.replace(/(\d{0,2})(\d{0,4})(\d{0,4})/,
+                    (match, ddd, part1, part2) => {
+                        return `${ddd ? `(${ddd}` : ""}${part1 ? `) ${part1}` : ""}${part2 ? `-${part2}` : ""}`;
+                    });
+            } else {
+                // Celular
+                e.target.value = value.replace(/(\d{0,2})(\d{0,5})(\d{0,4})/,
+                    (match, ddd, part1, part2) => {
+                        return `${ddd ? `(${ddd}` : ""}${part1 ? `) ${part1}` : ""}${part2 ? `-${part2}` : ""}`;
+                    });
+            }
+        });
+    }
+
+    const form = document.getElementById("cadastroForm");
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const cep = cepInput.value.replace(/\D/g, "");
+            const telefone = telefoneInput.value.replace(/\D/g, "");
+
+            if (cep.length !== 8) {
+                alert("CEP inválido. Deve conter 8 dígitos.");
+                return;
+            }
+
+            if (telefone.length !== 10 && telefone.length !== 11) {
+                alert("Telefone inválido. Deve conter 10 ou 11 dígitos.");
+                return;
+            }
+
+            // Aqui você pode prosseguir com o envio
+            alert("Cadastro válido! Redirecionando...");
+            window.location.href = "index.html";
+        });
+    }
+});
