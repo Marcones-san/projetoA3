@@ -30,6 +30,13 @@
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
     
+    <div class="carousel">
+        <img src="/jhonny.jpg" class="carousel-image active">
+        <img src="/jordi.jpg" class="carousel-image">
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+        <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+      </div>
+
     <div class="main-text">
         <header id="home">
             <h1>Bem-vindo ao Agendamento de Consultas</h1>
@@ -62,6 +69,34 @@
     <footer class="footer">
         <p>&copy; 2025 Saúde Capivari. Todos os direitos reservados.</p>
     </footer>
-    
+<script>
+  window.onload = function () {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".carousel-image");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) slide.classList.add("active");
+      });
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      showSlide(currentSlide);
+    }
+
+    // Exibe o primeiro slide
+    showSlide(currentSlide);
+
+    // Troca automático
+    setInterval(() => changeSlide(1), 5000);
+
+    // Torna a função acessível no HTML
+    window.changeSlide = changeSlide;
+  };
+</script>        
 </body>
 </html>
