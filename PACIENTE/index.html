@@ -1,102 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
-    <link rel="stylesheet" href="/PACIENTE/styles.css">
+    <link rel="stylesheet" href="/PACIENTE/styles.css" />
     <script defer src="/PACIENTE/navbar.js"></script>
-    <link rel="icon" type="image" href="/PACIENTE/logo.png">
-</head>
-<body>
-
+    <link rel="icon" type="image" href="/PACIENTE/logo.png" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo">
-        <img src="/PACIENTE/logo.png" alt="Logo Saúde Capivari" class="logo-img">
+      <div class="logo">
+        <img
+          src="/PACIENTE/logo.png"
+          alt="Logo Saúde Capivari"
+          class="logo-img"
+        />
         <span>Saúde Capivari</span>
-        </div>
+      </div>
 
-        <ul class="nav-links" id="navLinks">
-            <li class="dropdown">
-                <a href="#home">Minhas consultas</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#consultas-marcadas">Consultas Marcadas</a></li>
-                    <li><a href="#historico-consultas">Histórico de Consultas</a></li>
-                </ul>
-            </li>
-            <li><a href="#contact">Meu Perfil</a></li>
-            <li><a href="#about">Sobre & Contato</a></li>
-        </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li class="dropdown">
+          <a href="#home">Minhas consultas</a>
+          <ul class="dropdown-menu">
+            <li><a href="#consultas-marcadas">Consultas Marcadas</a></li>
+            <li><a href="#historico-consultas">Histórico de Consultas</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Meu Perfil</a></li>
+        <li><a href="#about">Sobre & Contato</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-    
-    <div class="carousel">
-        <img src="/jhonny.jpg" class="carousel-image active">
-        <img src="/jordi.jpg" class="carousel-image">
+
+    <div>
+      <div class="carousel">
+        <img src="/jhonny.jpg" class="carousel-image active" />
+        <img src="/jordi.jpg" class="carousel-image" />
         <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
         <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
       </div>
 
-    <div class="main-text">
+      <div class="main-text">
         <header id="home">
-            <h1>Bem-vindo ao Agendamento de Consultas</h1>
-            <p>Facilitando seu atendimento nos postos de saúde.</p>
+          <h1>Bem-vindo ao Agendamento de Consultas</h1>
+          <p>Facilitando seu atendimento nos postos de saúde.</p>
         </header>
-    
+
         <section id="schedule">
-            <h2>Agendar Consulta</h2>
-            <p>Escolha seu posto de saúde e agende sua consulta facilmente.</p>
+          <h2>Agendar Consulta</h2>
+          <p>Escolha seu posto de saúde e agende sua consulta facilmente.</p>
         </section>
-    </div>
+      </div>
 
-    <section id="postos">
+      <section id="postos">
         <div class="botoes-postos">
-            <a href="/POSTO/CENTROI/index.html">CENTRO I</a>
-            <a href="/POSTO/CENTROII/index.html">CENTRO II</a>
-            <a href="/POSTO/SANTALUCIA/index.html">SANTA LÚCIA</a>
-            <a href="/POSTO/SANTOANDRE/index.html">SANTO ANDRÉ</a>
-            <a href="/POSTO/CACADOR/index.html">CAÇADOR</a>
-            <a href="/POSTO/VILAFLOR/index.html">VILA FLOR</a>
-            <a href="/POSTO/TRESDEMAIO/index.html">TRÊS DE MAIO</a>
-            <a href="/POSTO/ALVORADA/index.html">ALVORADA</a>        
+          <a href="/POSTO/CENTROI/index.html">CENTRO I</a>
+          <a href="/POSTO/CENTROII/index.html">CENTRO II</a>
+          <a href="/POSTO/SANTALUCIA/index.html">SANTA LÚCIA</a>
+          <a href="/POSTO/SANTOANDRE/index.html">SANTO ANDRÉ</a>
+          <a href="/POSTO/CACADOR/index.html">CAÇADOR</a>
+          <a href="/POSTO/VILAFLOR/index.html">VILA FLOR</a>
+          <a href="/POSTO/TRESDEMAIO/index.html">TRÊS DE MAIO</a>
+          <a href="/POSTO/ALVORADA/index.html">ALVORADA</a>
         </div>
-    </section>
-    
-    <div class="button-agendamento">
+      </section>
+
+      <div class="button-agendamento">
         <a href="agendamento.html" class="btn-link">Agendar Consulta</a>
+      </div>
     </div>
-    
+
     <footer class="footer">
-        <p>&copy; 2025 Saúde Capivari. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Saúde Capivari. Todos os direitos reservados.</p>
     </footer>
-<script>
-  window.onload = function () {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".carousel-image");
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === index) slide.classList.add("active");
-      });
-    }
+    <script>
+      window.onload = function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel-image");
 
-    function changeSlide(direction) {
-      currentSlide += direction;
-      if (currentSlide >= slides.length) currentSlide = 0;
-      if (currentSlide < 0) currentSlide = slides.length - 1;
-      showSlide(currentSlide);
-    }
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) slide.classList.add("active");
+          });
+        }
 
-    // Exibe o primeiro slide
-    showSlide(currentSlide);
+        function changeSlide(direction) {
+          currentSlide += direction;
+          if (currentSlide >= slides.length) currentSlide = 0;
+          if (currentSlide < 0) currentSlide = slides.length - 1;
+          showSlide(currentSlide);
+        }
 
-    // Troca automático
-    setInterval(() => changeSlide(1), 5000);
+        // Exibe o primeiro slide
+        showSlide(currentSlide);
 
-    // Torna a função acessível no HTML
-    window.changeSlide = changeSlide;
-  };
-</script>        
-</body>
+        // Troca automático
+        setInterval(() => changeSlide(1), 5000);
+
+        // Torna a função acessível no HTML
+        window.changeSlide = changeSlide;
+      };
+    </script>
+  </body>
 </html>
