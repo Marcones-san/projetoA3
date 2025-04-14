@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - Centro II</title>
+    <link rel="stylesheet" href="/POSTO/CENTROII/style.css" />
+    <script defer src="/PACIENTE/navbar.js"></script>
+    <link rel="icon" type="image" href="/PACIENTE/imagens/logo.png" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="/PACIENTE/imagens/logo.png"
+          alt="Logo Saúde Capivari"
+          class="logo-img"
+        />
+        <span>Saúde Capivari</span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li class="dropdown">
+          <a href="#home">Minhas consultas</a>
+          <ul class="dropdown-menu">
+            <li><a href="#consultas-marcadas">Consultas Marcadas</a></li>
+            <li><a href="#historico-consultas">Histórico de Consultas</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Meu Perfil</a></li>
+        <li><a href="#about">Sobre & Contato</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <div class="main-text">
+      <header id="home">
+        <h1>Bem-vindo ao Agendamento de Consultas</h1>
+        <p>Facilitando seu atendimento nos postos de saúde.</p>
+      </header>
+
+      <section id="schedule">
+        <h2>Agendar Consulta</h2>
+        <p>Clique no botão abaixo para ir ao agendamento.</p>
+      </section>
+    </div>
+
+    <div class="button-agendamento">
+      <a href="/PACIENTE/agendamento.html" class="btn-link">Agendar Consulta</a>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Saúde Capivari. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

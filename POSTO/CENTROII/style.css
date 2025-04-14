@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #efebe2;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre a imagem e o texto */
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo-img {
+  width: 40px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+  max-width: 50px;
+  width: auto;
+}
+
+.navbar {
+  /*muda a cor da nav bar e no final a cor da letra da logo*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a0d5e3;
+  padding: 15px;
+  color: black;
+  font-weight: bold;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  text-align: center; /* Alinha o texto dentro dos elementos */
+  height: 80vh; /* Faz o conteúdo ocupar 80% da tela */
+}
+
+.main-content,
+.main-content1 {
+  width: 60%; /* Define uma largura padrão para os textos */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  /*muda os textos botão da navbar*/
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #007bff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    text-align: center;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: #a0d5e3;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.main-content {
+  /*texto dentro do background*/
+  color: black;
+}
+
+/* Estiliza o contêiner do botão */
+.button-agendamento {
+  text-align: center; /* Centraliza o botão */
+  margin-top: 0px; /* Espaçamento superior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.btn-link {
+  background-color: #67a9c0;
+  color: #fffffe;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #206b95;
+}
+
+/* Estiliza o botão dentro do .button-agendamento */
+.button-agendamento button {
+  background-color: #67a9c0;
+  color: #fffffe; /* Texto branco */
+  border: none; /* Remove borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 10px; /* Borda arredondada */
+  cursor: pointer; /* Cursor ao passar o mouse */
+  transition: background-color 0.3s ease; /* Animação de hover */
+}
+
+/* Efeito ao passar o mouse */
+.button-agendamento button:hover {
+  background-color: #206b95; /* Azul mais escuro */
+}
+
+/* Container do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ajuste para alinhar corretamente o menu suspenso */
+.dropdown-menu {
+  position: absolute;
+  top: 35px; /* Ajuste fino para alinhar exatamente abaixo do texto */
+  left: 50%; /* Centraliza em relação ao botão */
+  transform: translateX(-50%); /* Mantém o menu alinhado ao centro do botão */
+  background-color: #a0d5e3;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s;
+}
+
+/* Ajuste de alinhamento dos itens internos do dropdown */
+.dropdown-menu li {
+  padding: 12px;
+  text-align: left; /* Mantém os itens alinhados à esquerda */
+}
+
+/* Remove a borda inferior do último item */
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+/* Links do dropdown */
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px 15px;
+}
+
+/* Exibir o menu suspenso ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
